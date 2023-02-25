@@ -8,7 +8,7 @@ namespace YouTube_Downloader
 {
     class Receiver
     {
-        string Place;
+        //string Place;
         public void Operarion()
         {
             Console.WriteLine("Загрузка начата");

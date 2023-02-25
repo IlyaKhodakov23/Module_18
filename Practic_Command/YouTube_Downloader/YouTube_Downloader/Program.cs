@@ -1,4 +1,8 @@
 ﻿using AngleSharp.Dom;
+using YoutubeExplode;
+using YoutubeExplode.Converter;
+using YoutubeExplode.Search;
+using YoutubeExplode.Videos;
 
 namespace YouTube_Downloader
 {

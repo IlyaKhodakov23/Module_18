@@ -40,7 +40,8 @@ namespace YouTube_Downloader
                 var progress = new Progress<double>();
                 progress.ProgressChanged += (s, e) => Debug.WriteLine($"Загружено: {e:P2}");
                 //загружаем видео
-                var download = youtube.Videos.Streams.DownloadAsync(streamInfo, $"{place}/{video.Result.Id}.{streamInfo.Container}", progress);
+                await youtube.Videos.Streams.DownloadAsync(streamInfo, $"{place}/{video.Result.Id}.{streamInfo.Container}", progress);
+                Console.WriteLine("Download completed!");
                 //await youtube.Videos.DownloadAsync(url, place);
             }
             catch (Exception ex)

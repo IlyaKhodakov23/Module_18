@@ -37,10 +37,10 @@ namespace YouTube_Downloader
                 //возьмем поток с самым высоким возможным качеством
                 var streamInfo = streamManifest.GetMuxedStreams().GetWithHighestVideoQuality();
                 //прогресс загруженности
-                //var progress = new Progress<double>();
-                //progress.ProgressChanged += (s, e) => Debug.WriteLine($"Загружено: {e:P2}");
+                var progress = new Progress<double>();
+                progress.ProgressChanged += (s, e) => Debug.WriteLine($"Загружено: {e:P2}");
                 //загружаем видео
-                await youtube.Videos.Streams.DownloadAsync(streamInfo, $"{place}/{video.Result.Id}.{streamInfo.Container}");
+                await youtube.Videos.Streams.DownloadAsync(streamInfo, $"{place}/{video.Result.Id}.{streamInfo.Container}", progress);
                 //await youtube.Videos.DownloadAsync(url, place);
             }
             catch (Exception ex)

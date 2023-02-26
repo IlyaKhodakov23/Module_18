@@ -30,6 +30,8 @@ namespace YouTube_Downloader
             //  выполнение
             sender.Info(url);
             sender.Download(url, path);
+
+            Console.ReadKey();
         }
     }
 }
